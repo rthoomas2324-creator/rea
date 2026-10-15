@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Books</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">$</span><span id="business-name">My Business</span>
+      </div>
+      <nav id="tabs">
+        <button data-view="dashboard" class="active">Dashboard</button>
+        <button data-view="transactions">Transactions</button>
+        <button data-view="invoices">Invoices</button>
+        <button data-view="customers">Customers</button>
+        <button data-view="reports">Reports</button>
+        <button data-view="settings">Settings</button>
+      </nav>
+      <button id="assistant-toggle" class="primary">Ask the assistant</button>
+    </header>
+
+    <div class="layout">
+      <main id="view"></main>
+
+      <aside id="assistant" class="hidden" aria-label="Bookkeeping assistant">
+        <div class="assistant-head">
+          <strong>Assistant</strong>
+          <span class="muted" id="assistant-model"></span>
+          <button id="assistant-new" class="link">New chat</button>
+          <button id="assistant-close" class="link" aria-label="Close">
+            ✕
+          </button>
+        </div>
+        <div id="chat-log"></div>
+        <form id="chat-form">
+          <textarea
+            id="chat-input"
+            rows="2"
+            placeholder="Type a message…"
+            required
+          ></textarea>
+          <button class="primary" type="submit">Send</button>
+        </form>
+      </aside>
+    </div>
+
+    <dialog id="modal">
+      <form id="modal-form" method="dialog">
+        <h2 id="modal-title"></h2>
+        <div id="modal-body"></div>
+        <p class="error" id="modal-error"></p>
+        <div class="actions">
+          <button value="cancel" formnovalidate>Cancel</button>
+          <button class="primary" value="save" id="modal-save">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="hidden"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
