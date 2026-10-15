@@ -1,0 +1,17 @@
+{
+  "name": "bookkeeping-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simple bookkeeping for small businesses, with a Claude-powered assistant.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.134.0"
+  }
+}
